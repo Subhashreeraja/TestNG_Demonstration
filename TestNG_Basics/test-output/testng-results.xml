@@ -2,44 +2,44 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-19T21:56:01 IST" name="Default suite" finished-at="2026-04-19T21:56:20 IST" duration-ms="19084">
+  <suite started-at="2026-04-19T22:22:40 IST" name="Default suite" finished-at="2026-04-19T22:23:02 IST" duration-ms="21257">
     <groups>
     </groups>
-    <test started-at="2026-04-19T21:56:01 IST" name="Default test" finished-at="2026-04-19T21:56:20 IST" duration-ms="19084">
+    <test started-at="2026-04-19T22:22:40 IST" name="Default test" finished-at="2026-04-19T22:23:02 IST" duration-ms="21257">
       <class name="com.test.softassert_demo">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:01 IST" name="beforeTest" finished-at="2026-04-19T21:56:07 IST" duration-ms="5933" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:40 IST" name="beforeTest" finished-at="2026-04-19T22:22:48 IST" duration-ms="7886" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="logininvalid1()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:07 IST" name="logininvalid1" finished-at="2026-04-19T21:56:08 IST" duration-ms="1104" status="PASS">
+        <test-method signature="invalidpassword()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:48 IST" name="invalidpassword" finished-at="2026-04-19T22:22:50 IST" duration-ms="1788" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logininvalid1 -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:08 IST" name="afterTest" finished-at="2026-04-19T21:56:08 IST" duration-ms="255" status="PASS">
+        </test-method> <!-- invalidpassword -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:50 IST" name="afterTest" finished-at="2026-04-19T22:22:50 IST" duration-ms="307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:08 IST" name="beforeTest" finished-at="2026-04-19T21:56:11 IST" duration-ms="2737" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:50 IST" name="beforeTest" finished-at="2026-04-19T22:22:54 IST" duration-ms="3257" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="logininvalid2()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:11 IST" name="logininvalid2" finished-at="2026-04-19T21:56:13 IST" duration-ms="1838" status="PASS">
+        <test-method signature="invalidusername()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:54 IST" name="invalidusername" finished-at="2026-04-19T22:22:55 IST" duration-ms="1700" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logininvalid2 -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:13 IST" name="afterTest" finished-at="2026-04-19T21:56:13 IST" duration-ms="366" status="PASS">
+        </test-method> <!-- invalidusername -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:55 IST" name="afterTest" finished-at="2026-04-19T22:22:56 IST" duration-ms="231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:13 IST" name="beforeTest" finished-at="2026-04-19T21:56:16 IST" duration-ms="2403" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:56 IST" name="beforeTest" finished-at="2026-04-19T22:22:58 IST" duration-ms="2568" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="validation()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:16 IST" name="validation" finished-at="2026-04-19T21:56:20 IST" duration-ms="4002" status="PASS">
+        <test-method signature="validation()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:22:58 IST" name="validation" finished-at="2026-04-19T22:23:01 IST" duration-ms="3101" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validation -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.test.softassert_demo@2a4fb17b]" started-at="2026-04-19T21:56:20 IST" name="afterTest" finished-at="2026-04-19T21:56:20 IST" duration-ms="344" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.test.softassert_demo@48f2bd5b]" started-at="2026-04-19T22:23:01 IST" name="afterTest" finished-at="2026-04-19T22:23:02 IST" duration-ms="330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
