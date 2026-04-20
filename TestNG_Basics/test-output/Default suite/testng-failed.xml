@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.softassert_demo">
+      <class name="com.test.demoblazeDataprovider">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
           <include name="validation"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="invalidusername"/>
         </methods>
-      </class> <!-- com.test.softassert_demo -->
+      </class> <!-- com.test.demoblazeDataprovider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

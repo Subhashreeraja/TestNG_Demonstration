@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://demoblaze.com/"/>
     <classes>
-      <class name="com.test.softassert_demo">
+      <class name="com.test.demoblazeDataprovider">
         <methods>
-          <include name="beforeTest"/>
+          <include name="validation" invocation-numbers="1"/>
           <include name="afterTest"/>
-          <include name="validation"/>
+          <include name="beforeTest"/>
+          <include name="invalidusername" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.test.softassert_demo -->
+      </class> <!-- com.test.demoblazeDataprovider -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

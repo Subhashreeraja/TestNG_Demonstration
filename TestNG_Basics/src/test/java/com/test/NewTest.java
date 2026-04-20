@@ -17,7 +17,7 @@ public class NewTest {
 	
 	  ChromeOptions options=new ChromeOptions();
 	  options.addArguments("--start -maximized");
-	  options.addArguments("--headless");
+	 // options.addArguments("--headless");
 	  driver=new ChromeDriver(options);
 	  driver.get("https://www.demoblaze.com/");
 	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

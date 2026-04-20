@@ -45,7 +45,7 @@ public class softassert_demo {
         String msg = message.getText();
         String msg1 = "Welcome Admin";
 
-        softAssert.assertEquals(msg1, msg, "Login successful"); 
+        softAssert.assertEquals(msg1, msg, "Login failed"); 
         softAssert.assertAll();                                  
     }
 
