@@ -8,88 +8,99 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class demoblazeDataprovider {
-	
-	@DataProvider(name="testData")
-	public Object[][] dataprovfunc(){
-		return new Object[][] {{"Admin","admin"},{"Admin","asdf"}};
-	}
-	public WebDriver driver;
-	  @BeforeMethod
-	  @Parameters({"browser","url"})
-	  public void beforeTest(String browser,String url) {
-		  if(browser.equalsIgnoreCase("chrome")) {
-			  ChromeOptions options=new ChromeOptions();
-			  options.addArguments("---start-maximized--");
-			 // options.addArguments("--headless");
-			  driver = new ChromeDriver(options);
-			  System.out.println("Browser started: "+browser);
-		  }
-		  else if (browser.equalsIgnoreCase("firefox")) {
-			  FirefoxOptions options=new FirefoxOptions();
-			  options.addArguments("---start-maximized--");
-			  options.addArguments("--headless");
-			  driver = new FirefoxDriver(options);
-		  }
-		
-		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		  driver.get(url);
-	  }
 
-	 @Test(dataProvider="testData")
-		public void validation(String username,String password) {
-		 SoftAssert sa=new SoftAssert();
-			  driver.findElement(By.id("login2")).click();
-			driver.findElement(By.id("loginusername")).sendKeys(username);
-			driver.findElement(By.id("loginpassword")).sendKeys(password);
-			driver.findElement(By.xpath("//button[@onclick='logIn()']")).click();
-			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		        WebElement message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser")));
+    public WebDriver driver;
 
-		        String msg = message.getText();
-		        String msg1 = "Welcome Admin";
+  
+    @DataProvider(name="validData")
+    public Object[][] validData(){
+        return new Object[][] {
+            {"Admin","admin"}
+        };
+    }
 
-		        sa.assertEquals(msg1, msg, "Login failed"); 
-		        sa.assertAll();      
-			 System.out.println("login successful");
-			
-			
-			}
-		  @Test (dataProvider="testData")
-		  public void invalidusername(String invalidusername,String password) {
-			  SoftAssert sa=new SoftAssert();
-			  driver.findElement(By.id("login2")).click();
-			driver.findElement(By.id("loginusername")).sendKeys(invalidusername);
-			driver.findElement(By.id("loginpassword")).sendKeys(password);
-			driver.findElement(By.xpath("//button[@onclick='logIn()']")).click();
-			
-			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		        wait.until(ExpectedConditions.alertIsPresent());
-		        Alert alert = driver.switchTo().alert();
+    @DataProvider(name="invalidData")
+    public Object[][] invalidData(){
+        return new Object[][] {
+            {"Admin","asdf"}
+        };
+    }
 
-		        String msg = alert.getText();
-		        String msg1 = "Wrong password.";
-		        alert.accept();
+    @BeforeMethod
+    @Parameters({"browser","url"})
+    public void beforeTest(String browser,String url) {
 
-		        sa.assertEquals(msg1, msg, "Login failed");
-		        sa.assertAll();    
-			
-			}
-		  		  
-		
-		  @AfterMethod
-		  public void afterTest() {
-			  driver.quit();
-		  }
+        if(browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized"); 
+            driver = new ChromeDriver(options);
+        }
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get(url);
+        System.out.println("Browser started: " + browser);
+    }
+
+    
+    @Test(dataProvider="validData")
+    public void validLoginTest(String username,String password) {
+
+        SoftAssert sa = new SoftAssert();
+
+        driver.findElement(By.id("login2")).click();
+        driver.findElement(By.id("loginusername")).sendKeys(username);
+        driver.findElement(By.id("loginpassword")).sendKeys(password);
+        driver.findElement(By.xpath("//button[@onclick='logIn()']")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement message = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser"))
+        );
+
+        String actual = message.getText();
+        String expected = "Welcome Admin";
+
+        sa.assertEquals(actual, expected, "Valid login failed");
+        sa.assertAll();
+
+        System.out.println("Valid login successful");
+    }
+
+    @Test(dataProvider="invalidData")
+    public void invalidLoginTest(String username,String password) {
+
+        SoftAssert sa = new SoftAssert();
+
+        driver.findElement(By.id("login2")).click();
+        driver.findElement(By.id("loginusername")).sendKeys(username);
+        driver.findElement(By.id("loginpassword")).sendKeys(password);
+        driver.findElement(By.xpath("//button[@onclick='logIn()']")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.alertIsPresent());
+
+        Alert alert = driver.switchTo().alert();
+
+        String actual = alert.getText();
+        String expected = "Wrong password.";
+
+        alert.accept();
+
+        sa.assertEquals(actual, expected, "Invalid login test failed");
+        sa.assertAll();
+
+        System.out.println("Invalid login verified");
+    }
+
+    @AfterMethod
+    public void afterTest() {
+        driver.quit();
+    }
 }
