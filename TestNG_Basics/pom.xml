@@ -30,6 +30,11 @@
  
  
   <dependencies> 
+ <dependency>
+        <groupId>org.apache.pdfbox</groupId>
+        <artifactId>pdfbox</artifactId>
+        <version>3.0.5</version>
+    </dependency>
 
   <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
@@ -41,10 +46,16 @@
 
 <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
+
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.12.0</version>
     <scope>test</scope>
 </dependency>
+  	<dependency>
+  		<groupId>expleo_Training</groupId>
+  		<artifactId>Cucumber_POM</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>
